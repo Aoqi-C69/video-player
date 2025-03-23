@@ -102,7 +102,6 @@ function toggleMute() {
         lastVolumeIconClass.forEach(element => {
             volumeIcon.classList.add(element);
         });
-        // volumeIcon.classList.add('fas', 'fa-volume-up');
         volumeIcon.setAttribute('title', 'mute');
     }
 }
@@ -141,12 +140,15 @@ function closeFullscreen() {
     video.classList.remove('video-fullscreen');
 }
 
-let fullscreen = false;
-
-// Toggle Fullscreen
 function toggleFullscreen() {
-    !fullscreen ? openFullscreen(player) : closeFullscreen();
-    fullscreen = !fullscreen;
+    !document.fullscreenElement ? openFullscreen(player) : closeFullscreen();
+}
+
+// for esc button to change styling
+function fullscreenChange() {
+    if (!document.fullscreenElement) {
+        video.classList.remove('video-fullscreen');
+    }
 }
 
 // Event Listeners
@@ -159,3 +161,4 @@ volumeRange.addEventListener('click', changeVolume);
 volumeIcon.addEventListener('click', toggleMute);
 speed.addEventListener('change', changeSpeed);
 fullscreenBtn.addEventListener('click', toggleFullscreen);
+document.addEventListener('fullscreenchange', fullscreenChange);
