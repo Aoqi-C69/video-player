@@ -193,7 +193,7 @@ select:focus {
   outline: none;
 }
 
-select > option {
+select>option {
   background: rgba(0, 0, 0, 0.9);
   border: none;
   font-size: 14px;
@@ -216,6 +216,15 @@ select > option {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* picture in picture */
+.pip-container {
+  margin-right: 25px;
+}
+
+.pip-container:hover {
+  cursor: pointer;
 }
 
 /* Media Query: Large Smartphone (Vertical) */

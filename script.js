@@ -11,6 +11,7 @@ const duration = document.querySelector('.time-duration');
 const speed = document.querySelector('.player-speed');
 const fullscreenBtn = document.querySelector('.fullscreen');
 const showControls = document.querySelector('.show-controls');
+const pipBtn = document.querySelector('.pip-container');
 
 // check PC or mobile ----------------------------- //
 function isMobile() {
@@ -162,6 +163,15 @@ if (isMobile()) {
         }
     }
 
+    // Picture in Picture ------------------------ //
+    function togglePictureInPicture() {
+        if (document.pictureInPictureElement) {
+            document.exitPictureInPicture();
+        } else if (document.pictureInPictureEnabled) {
+            video.requestPictureInPicture();
+        }
+    }
+
     // Event Listeners
     playBtn.addEventListener('click', togglePlay);
     video.addEventListener('click', togglePlay);
@@ -173,5 +183,6 @@ if (isMobile()) {
     speed.addEventListener('change', changeSpeed);
     fullscreenBtn.addEventListener('click', toggleFullscreen);
     document.addEventListener('fullscreenchange', fullscreenChange);
+    pipBtn.addEventListener('click', togglePictureInPicture);
 }
 
