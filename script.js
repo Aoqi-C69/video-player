@@ -152,13 +152,24 @@ function fullscreenChange() {
 }
 
 // Event Listeners
-playBtn.addEventListener('click', togglePlay);
-video.addEventListener('click', togglePlay);
+// playBtn.addEventListener('click', togglePlay);
+// video.addEventListener('click', togglePlay);
+// video.addEventListener('timeupdate', updateProgress);
+// video.addEventListener('canplay', updateProgress);
+// progressRange.addEventListener('click', setProgress);
+// volumeRange.addEventListener('click', changeVolume);
+// volumeIcon.addEventListener('click', toggleMute);
+// speed.addEventListener('change', changeSpeed);
+// fullscreenBtn.addEventListener('click', toggleFullscreen);
+// document.addEventListener('fullscreenchange', fullscreenChange);
+
+playBtn.addEventListener('pointerup', togglePlay);
+video.addEventListener('pointerup', togglePlay);
 video.addEventListener('timeupdate', updateProgress);
 video.addEventListener('canplay', updateProgress);
-progressRange.addEventListener('click', setProgress);
-volumeRange.addEventListener('click', changeVolume);
-volumeIcon.addEventListener('click', toggleMute);
+progressRange.addEventListener('pointerup', setProgress);
+volumeRange.addEventListener('pointerup', changeVolume);
+volumeIcon.addEventListener('pointerup', toggleMute);
 speed.addEventListener('change', changeSpeed);
-fullscreenBtn.addEventListener('click', toggleFullscreen);
+fullscreenBtn.addEventListener('pointerup', toggleFullscreen);
 document.addEventListener('fullscreenchange', fullscreenChange);
