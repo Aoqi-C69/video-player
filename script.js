@@ -10,6 +10,18 @@ const currentTime = document.querySelector('.time-elapsed');
 const duration = document.querySelector('.time-duration');
 const speed = document.querySelector('.player-speed');
 const fullscreenBtn = document.querySelector('.fullscreen');
+const controlsContainer = document.querySelector('.controls-container');
+
+// check PC or mobile ----------------------------- //
+function isMobile() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return /iphone|ipod|android|windows phone|blackberry|bb|mobile|tablet|kindle|silk/i.test(userAgent);
+}
+
+if (isMobile()) {
+    video.controls = true;
+    controlsContainer.style.visibility = hidden;
+}
 
 // Play & Pause ----------------------------------- //
 function showPlayIcon() {
@@ -152,35 +164,13 @@ function fullscreenChange() {
 }
 
 // Event Listeners
-// playBtn.addEventListener('click', togglePlay);
-// video.addEventListener('click', togglePlay);
-// video.addEventListener('timeupdate', updateProgress);
-// video.addEventListener('canplay', updateProgress);
-// progressRange.addEventListener('click', setProgress);
-// volumeRange.addEventListener('click', changeVolume);
-// volumeIcon.addEventListener('click', toggleMute);
-// speed.addEventListener('change', changeSpeed);
-// fullscreenBtn.addEventListener('click', toggleFullscreen);
-// document.addEventListener('fullscreenchange', fullscreenChange);
-
-// playBtn.addEventListener('pointerup', togglePlay);
-// video.addEventListener('pointerup', togglePlay);
-// video.addEventListener('timeupdate', updateProgress);
-// video.addEventListener('canplay', updateProgress);
-// progressRange.addEventListener('pointerup', setProgress);
-// volumeRange.addEventListener('pointerup', changeVolume);
-// volumeIcon.addEventListener('pointerup', toggleMute);
-// speed.addEventListener('change', changeSpeed);
-// fullscreenBtn.addEventListener('pointerup', toggleFullscreen);
-// document.addEventListener('fullscreenchange', fullscreenChange);
-
-playBtn.addEventListener('touchstart', togglePlay);
-video.addEventListener('touchstart', togglePlay);
+playBtn.addEventListener('click', togglePlay);
+video.addEventListener('click', togglePlay);
 video.addEventListener('timeupdate', updateProgress);
 video.addEventListener('canplay', updateProgress);
-progressRange.addEventListener('touchstart', setProgress);
-volumeRange.addEventListener('touchstart', changeVolume);
-volumeIcon.addEventListener('touchstart', toggleMute);
+progressRange.addEventListener('click', setProgress);
+volumeRange.addEventListener('click', changeVolume);
+volumeIcon.addEventListener('click', toggleMute);
 speed.addEventListener('change', changeSpeed);
-fullscreenBtn.addEventListener('touchstart', toggleFullscreen);
+fullscreenBtn.addEventListener('click', toggleFullscreen);
 document.addEventListener('fullscreenchange', fullscreenChange);
