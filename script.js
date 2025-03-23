@@ -10,7 +10,7 @@ const currentTime = document.querySelector('.time-elapsed');
 const duration = document.querySelector('.time-duration');
 const speed = document.querySelector('.player-speed');
 const fullscreenBtn = document.querySelector('.fullscreen');
-const controlsContainer = document.querySelector('.controls-container');
+const showControls = document.querySelector('.show-controls');
 
 // check PC or mobile ----------------------------- //
 function isMobile() {
@@ -20,7 +20,7 @@ function isMobile() {
 
 if (isMobile()) {
     video.controls = true;
-    controlsContainer.style.display = none;
+    showControls.style.display = none;
 } else {
     // Play & Pause ----------------------------------- //
     function showPlayIcon() {
