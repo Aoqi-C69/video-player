@@ -20,7 +20,7 @@ function isMobile() {
 
 if (isMobile()) {
     video.controls = true;
-    showControls.style.display = none;
+    showControls.style.display = 'none';
 } else {
     // Play & Pause ----------------------------------- //
     function showPlayIcon() {
