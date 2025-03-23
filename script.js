@@ -20,7 +20,7 @@ function isMobile() {
 
 if (isMobile()) {
     video.controls = true;
-    controlsContainer.style.visibility = hidden;
+    controlsContainer.style.display = none;
 }
 
 // Play & Pause ----------------------------------- //
